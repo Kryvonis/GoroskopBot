@@ -1,0 +1,3 @@
+
+# RUN CELERY BEAT
+celery -A app.core.updater.celery_cli worker --beat --loglevel=INFO

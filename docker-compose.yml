@@ -1,0 +1,25 @@
+version: '3'
+services:
+  webapp:
+    build: .
+    command:
+      - /bin/bash
+      - -c
+      - -e
+      - |
+        python run.py
+  updater:
+    build: .
+    depends_on:
+      - redis
+    command:
+      - /bin/bash
+      - -c
+      - -e
+      - |
+        celery -A app.core.updater.celery_cli worker --beat --loglevel=INFO
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+

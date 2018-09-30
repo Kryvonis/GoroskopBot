@@ -1,0 +1,13 @@
+Flask==0.12.2
+requests
+sqlalchemy
+pytest
+redis
+celery
+python-dotenv
+mock
+pytest_mock
+psycopg2
+psycopg2-binary
+gtts
+python-telegram-bot
